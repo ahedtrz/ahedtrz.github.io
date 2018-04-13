@@ -1,0 +1,95 @@
+/*p{margin:0;padding:0;}*/
+.djsearch .searchbtn{width: 101px; height: 38px;background: url("http://www.zfwx.com/wxqt/djwangxiao/lawyerschool/style/images/search.png") no-repeat right center;text-align: center;line-height: 38px;}
+.referred-provinces ._hover_gongz{ width:35px;  line-height: 26px;  font-size: 12px;  color: #fff;opacity: 0.6;  text-align: center ;float: left;  }
+.referred-provinces ._hover_gongz:hover{color:#fff;opacity:1}
+.bcol-orange-gongz.djtop-s{background:url("../../images/jcfg/header.jpg") no-repeat 100% 100% #0291ff;}
+.referred-provinces{background: url("../../images/jcfg/line_shu.jpg") repeat-x top;}
+
+.djlook,.djbuy,.djbuysuc{width: 91px; height: 27px;display: block;line-height: 28px;font-size: 14px;}
+.djlook{border:1px solid #ff7900;color: #ff7900;margin: 30px auto 0;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+.djbuy,.djbuysuc{background:url("../../images/jcfg/buy_btn.png") no-repeat center;color: #fff;margin: 12px auto 10px;}
+.djlook:hover,.djbuy:hover,.djbuysuc:hover{background:url("../../images/jcfg/buy_btn_hover.png") no-repeat center;color: #fff}
+/*面授banner*/
+.pt11 .banners .item0{background: url("../../images/zffw/banner1.jpg") no-repeat;background-size: 100%}
+.pt11 .banners .item1{background: url("../../images/zffw/banner2.jpg") no-repeat;background-size: 100%}
+.pt11 .banners .item2{background: url("../../images/zffw/banner3-0.jpg") no-repeat ;background-size: 100%}
+.pt11 .banners .item2:hover{background: url("../../images/zffw/banner3-1.gif") no-repeat;background-size: 100%}
+.pt11 .banners .item3{background: url("../../images/zffw/banner4.jpg") no-repeat ;background-size: 100%}
+.pt11 .djcon-banner{box-sizing: border-box;width:100%;padding:13px 0;}
+.pt11 .djcon-banner div.banner_con{position: relative;width:100%;height:218px;overflow: hidden}
+.pt11 .djcon-banner div.banner_con .banners{clear:both;;width:100%;height:218px;}
+.pt11 .djcon-banner div.banner_con  .banners li.banner_item{width:100%;height:218px;}
+.pt11 .djcon-banner div.banner_con .banners li.banner_item a{display: block;width:100%;height:100%}
+.pt11 .djcon-banner div.banner_con .banner_bottom{clear:both;position: absolute;bottom:5px;left:400px;width:100px;height:20px;}
+.pt11 .djcon-banner div.banner_con  .banner_bottom span.banner_icon{display: block;width:5px;height:5px;margin:5px;border:1px solid #fff;border-radius: 50%;cursor: pointer}
+.pt11 .djcon-banner div.banner_con  .banner_bottom li.current span.banner_icon{background-color: #fff}
+.f2ftit{width:100%;height:38px;border:1px solid #e6e6e6;background-color: #f7f7f7}
+/*.f2fcon{padding-left:17px;}*/
+.f2ftit li{height:38px;line-height:38px;width:100px;}
+.f2ftit ul.djcon-typelist{width:100%;}
+.f2ftit li a{display:block;height:38px;line-height:38px;width:100%;box-sizing: border-box;color:#313131;font-size:14px;text-align: center}
+.f2ftit li a:hover{background-color: #fff;color:#e97c26;border:1px solid #e6e6e6}
+.f2ftit li a.listhover{background-color: #fff;color:#e97c26;border:1px solid #e6e6e6}
+.f2ftit li a.first.listhover{border-left:0;}
+.f2fcon .f2f_container{width:645px;box-sizing: border-box;padding:24px 19px 30px 24px;}
+.f2fcon .rightContainer{width:305px;}
+.f2fcon .f2f_container .f2fList li{width:100%;height:40px;line-height:40px;border-bottom:1px  dashed #eee}
+.f2fcon .f2f_container .f2fList li:first-of-type{border-top:1px  dashed #eee}
+.f2ficon0,.f2ficon1,.f2ficon2,.f2ficon3,.f2ficon4,.f2ficon5{display:block;height:16px;line-height:16px;margin:12px 12px 12px 0;padding:0 5px;text-align:center;border-radius: 2px;color:#fff}
+.f2ficon0{background-color: #6430b0}
+.f2ficon1{background-color: #026ddc}
+.f2ficon2{background-color: #489a49}
+.f2ficon3{background-color: #33adbc}
+.f2ficon4{background-color: #034e83}
+.f2fList .event_title{color:#000;font-size: 14px;}
+.f2fList .clock{padding:0 0 0 15px;}
+.f2fList .clocked{background: url("../../images/zffw/clock_gray.png") no-repeat 0 center;color:#929292}
+.f2fList .clocking{background: url("../../images/zffw/clock_red.png") no-repeat 0 center;color:#ff0000}
+.f2fList .message{ background: url("../../images/zffw/message-blue.png") no-repeat center;height: 40px;width: 16px;vertical-align: middle;margin: 0px 0 0 5px; }
+.pager{box-sizing: border-box;height:40px;width:645px;padding:15px 0px 2px 12px;background-color: #f7f7f7;}
+.pager .firstPage,.pager .previousPage,.pager .lastPage,.pager .nextPage{height:22px;line-height:20px;box-sizing: border-box;padding:0 10px;margin-left:5px;border:1px solid #c4c2c3;color:#757575;background:url("../../images/zffw/pageLine.jpg") repeat-x center;cursor: pointer; -webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
+.pager .pageList li span{display:block;height:22px;line-height:20px;box-sizing: border-box;padding:0 10px;margin-left:5px;border:1px solid #c4c2c3;color:#757575;background:url("../../images/zffw/pageLine.jpg") repeat-x center;cursor: pointer; -webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
+.pager .pageList li.omit{height:22px;line-height:20px;box-sizing: border-box;margin:0 5px;}
+.pager .pageList li span.current{background:url("../../images/zffw/pageCurrent.jpg") repeat-x center;border:none;color:#fff}
+.f2fcon .allListen,.f2fcon .allRecommend{box-sizing:border-box;width:305px;padding:10px 20px;}
+.f2fcon .allListen .listen_title,.f2fcon .allRecommend .recommend_title{font-size: 20px;line-height:35px;color:#2c2c2c;font-family: "微软雅黑", "宋体", sans-serif;font-weight: bold;border-bottom:1px solid #e5e5e5}
+.f2fcon .allListen .listenItem{box-sizing: border-box;width:100%;height:155px;padding:18px 0 22px 0;border-bottom: 1px dotted #a6a6a6}
+.f2fcon .allRecommend .recommendItem{box-sizing: border-box;width:100%;height:250px;padding:18px 0 0 0;}
+.f2fcon .allRecommend .recommendItem img{width:250px;height:158px;margin-bottom:10px}
+.f2fcon .allRecommend .recommendItem .coursett{margin:0;padding:0;font-size:14px;line-height:30px;color:#f40000}
+.f2fcon .allRecommend .recommendItem .coursett a{font-size:14px;line-height:30px;color:#f40000}
+.f2fcon .allRecommend .recommendItem .tchNote{margin:0;padding:0;font-size:12px;line-height:27px;color:#040000}
+.f2fcon .allRecommend .recommendItem .tchNote .tchposition{display:inline-block;margin-left:10px;}
+.f2fcon .allRecommend .listenItem:last-of-type{border-bottom:none}
+.f2fcon .listenItem .tchDetailsCon{box-sizing: border-box;padding-right:8px;height:65px;margin-bottom:18px;}
+.f2fcon .listenItem .tchDetailsCon img{width:67px;height:65px;margin-right:8px}
+.f2fcon .listenItem .tchDetailsCon .tchDetails{overflow: hidden}
+.f2fcon .listenItem .tchDetailsCon .tchName{line-height:22px;font-size:12px;color:#626262 ;margin:0 0 5px 0;padding:0;}
+.f2fcon .listenItem .tchDetailsCon .tchNote{line-height: 20px;font-size:12px;color:#959595;margin:0;padding:0}
+.f2fcon .listenItem .listenInfo .skills{font-size:14px;line-height: 16px;color:#626262;margin:0;}
+.f2fcon .listenItem .listenInfo .count,.f2fcon .listenItem .listenInfo .listenBtn{display:block;}
+.f2fcon .listenItem .listenInfo .count{margin-top:3px;font-size:12px;color:#959595}
+.f2fcon .listenItem .listenInfo .count .redNum{font-size:12px;color:#f40000}
+.f2fcon .listenItem .listenInfo .listenBtn{display:block;width:72px;height:21px;line-height:21px;text-align:center;color:#fff;}
+.f2fcon .listenItem .listenInfo .listenBtn.red{background: url("../../images/zffw/xiangting_button.png")no-repeat center;cursor: pointer}
+.f2fcon .listenItem .listenInfo .listenBtn.gray{background:url("../../images/zffw/pageLine.jpg") repeat-x center;color:#757575;border:1px solid #eee}
+.f2fcon .listenItem .listenInfo .listenBtn.red:hover{background: url("../../images/zffw/xiangting_hover.png")no-repeat center;cursor: pointer}
+/*弹窗*/
+body{position: relative}
+.popUp{position:absolute;top:0;left:0;bottom:0;right:0;background-color: #e0e0e0;opacity: 0.5;}
+.popWin{width:402px;height:182px;border:1px solid #eee;position:fixed;left:50%;top:50%;margin-top:-90px;margin-left:-200px;background-color: #fff}
+.popWin .popTitle{border-bottom:1px solid #eeeeee;height:44px;padding:0 20px;}
+.popWin .popTitle p{font-size:16px;margin:0;line-height:44px;font-weight:bold}
+.popWin .popContent p{text-align:center;line-height:136px;}
+.popWin .popClose{position: absolute;top:10px;right:10px;width:20px;height:20px;background: url("../../images/zffw/close.png") no-repeat center;background-size:100% 100%;cursor: pointer}
+.djlogo-jcfg{width: 216px;height: 50px;margin: 36px 0 0 0;}
+.djmain-coursetype{background-color:#2cb1ff}
+.djmain-sidesimg{background: url("../../images/jcfg/star.png") no-repeat center}
+.lecturerbtn {background: url(../../images/jcfg/long_btn.png) no-repeat center;}
+.lecturerbtn:hover {background: url(../../images/jcfg/long_btn.png) no-repeat center;}
+.footer{background: url("../../images/jcfg/footer.png")}
+.djcontit a.conlisthover{background: url(../../images/jcfg/line_bottom.png) no-repeat bottom;color:#000}
+.col-lightgray {color: #fff;}
+.foot-nav .col-lightgray {color:#fff;opacity:0.7;}
+.djmain-coursetypelist li{width:50%}
+
