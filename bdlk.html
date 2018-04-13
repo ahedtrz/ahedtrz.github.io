@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <title>${(djWx.bottom)!学院}</title>
+    <link href="${requestPath!}/djwfed/css/common/normalize.css" type="text/css" rel="stylesheet">
+    <link href="${requestPath!}/djwfed/css/common/animate.min.css" type="text/css" rel="stylesheet">
+    <link href="${requestPath!}/djwfed/css/common/suspension.css" type="text/css" rel="stylesheet">
+    <link href="${requestPath!}/djwfed/css/common/global.css" type="text/css" rel="stylesheet">
+    <link href="${requestPath!}/djwfed/css/common/index.css" type="text/css" rel="stylesheet">
+    <link href="${requestPath!}/djwfed/css/common/${(djWx.css)!}" type="text/css" rel="stylesheet">
+    <!--<link href="${requestPath!}/djwfed/css/common/common_sfjd.css" type="text/css" rel="stylesheet">-->
+    <script type="text/javascript" src="${requestPath!}/djwfed/scripts/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="${requestPath!}/djwfed/scripts/widgets/layer/layer.js"></script>
+
+    <!-- // <script type="text/javascript" src="${requestPath!}/djwfed/scripts/common/common.js"></script> -->
+    <script type="text/javascript" src="${requestPath!}/djyFe/djyJsAPI/djwx/djcommon.js"></script>
+    
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="${requestPath!}/djwfed/scripts/widgets/PIE/PIE.js"></script>
+    <![endif]-->
+</head>
+<body>
+<input type='hidden' id='vipcourseid' value="${courseId!}">
+<input type='hidden' id='buySuc'  value="${czstatus!}">
+<input type="hidden" id="userName" value="${userName!}" >
+<input type="hidden" id="requestPath" value="${requestPath!}" >
+<input type="hidden" id="orgid" value="${(djWx.orgid?c)!}" >
+<input type="hidden" id="xjstucwid" value="${stucwid!}" >
+<input type="hidden" id="shortname" value="${shortName!}" >
+<input type="hidden" id="typeName" value="${(djWx.extLm)!}" >
+<input type="hidden" id="userId" value="${(id)!}" >
+<!--侧边固定栏 S-->
+<div class="leftsides">
+    <div class="leftcon">
+             <span class="closem"><img src="${requestPath!}/djwfed/images/common/closem.png" alt="关闭"></span>
+			<#if userName?exists &&domain==0>
+	            <p class="cons"><a href="${zfwxPath!}/allUser/school_login_success.jsp?redirect=${zfwxPath!}/static_cooperateLowyerfirm.jsp"  target="_blank">律所</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/allUser/school_login_success.jsp?redirect=${zfwxPath!}/static_cooperateLawyer.jsp" target="_blank">律师</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/allUser/school_login_success.jsp?redirect=${zfwxPath!}/static_cooperateLawyerAssociation.jsp"  target="_blank">律协</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/allUser/school_login_success.jsp?redirect=${zfwxPath!}/static_major.jsp"  target="_blank">专业</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/allUser/school_login_success.jsp?redirect=${zfwxPath!}/DjActivity/getActivityList.do"  target="_blank">面授</a></p>
+			<#elseif userName?exists &&domain==1>
+               <p class="cons"><a href="${sfjdPath!}/allUser/school_login_success.jsp?redirect=${sfjdPath!}/sfjd/static_cooperateLowyerfirm.jsp"  target="_blank">鉴定所</a></p>
+               <p class="cons"><a href="${sfjdPath!}/allUser/school_login_success.jsp?redirect=${sfjdPath!}/sfjd/static_cooperateLawyerAssociation.jsp"  target="_blank">鉴定协会</a></p>
+               <p class="cons"><a href="${sfjdPath!}/allUser/school_login_success.jsp?redirect=${sfjdPath!}/DjActivity/getActivityList.do"  target="_blank">面授</a></p>
+			<#elseif domain==1>
+		        <p class="cons"><a href="${sfjdPath!}/sfjd/static_cooperateLowyerfirm.jsp"  target="_blank">鉴定所</a></p>
+                <p class="cons"><a href="${sfjdPath!}/sfjd/static_cooperateLawyerAssociation.jsp"  target="_blank">鉴定协会</a></p>
+                <p class="cons"><a href="${sfjdPath!}/DjActivity/getActivityList.do"  target="_blank">面授</a></p>
+            <#else>
+	            <p class="cons"><a href="${zfwxPath!}/static_cooperateLowyerfirm.jsp"  target="_blank">律所</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/static_cooperateLawyer.jsp" target="_blank">律师</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/static_cooperateLawyerAssociation.jsp"  target="_blank">律协</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/static_major.jsp"  target="_blank">专业</a></p>
+	            <p class="cons"><a href="${zfwxPath!}/DjActivity/getActivityList.do"  target="_blank">面授</a></p>
+			</#if>
+		    <div class="joinm">
+            	<!-- <#if userName?exists>
+                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/joinus.jsp" class="jmb"  target="_blank">招聘英才</a>
+                <#else>
+                <a href="http://${serverName!www.zfwx.com}/joinus.jsp" class="jmb"  target="_blank">招聘英才</a>
+                </#if> -->
+                <a href="javascript:addFavorite()" class="jmb">加入收藏</a>
+                <#if userName?exists>
+                 <a href="http://${serverName!www.zfwx.com}/member/index.jsp#/member/recharge.jsp" class="jmb" target="_blank">充值中心</a>
+                <#else>
+                 <a href="${casPath!}/login?service=${casRedirectPath!}" class="jmb" target="_blank">充值中心</a>
+                </#if>
+<!--                 <a href="#" class="jmb">投稿通道</a> -->
+               <!--     <a href="${bbsPath!}/dyhd/425.jhtml" class="jmb"  target="_blank">帮助中心</a>-->
+            	<#if userName?exists>
+                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/contactus.jsp" class="jmb"  target="_blank">联系我们</a>
+                <#else>
+                <a href="http://${serverName!www.zfwx.com}/contactus.jsp" class="jmb"  target="_blank">联系我们</a>
+                </#if>
+            </div>
+            <a href="http://${serverName!www.zfwx.com}/phone/down/iphone.html" class="apples"  target="_blank"><img src="./djwangxiao/lawyerschool/style/images/ios.png" alt="苹果客户端"></a>
+            <a href="http://${serverName!www.zfwx.com}/phone/down/Android.html" class="android"  target="_blank"><img src="./djwangxiao/lawyerschool/style/images/android.png" alt="安装客户端"></a>
+        </div>
+    </div>
+<!--侧边固定栏 E-->
+<div class="main">
+        <!--header S-->
+        <div class="header">
+            <div class="djtop bcol-back">
+                    <!-- <a href="javascript:void(0);" class="djbtn-navber">
+                        <code class="bcol-white"></code>
+                        <code class="bcol-white mt5"></code>
+                        <code class="bcol-white mt5"></code>
+                    </a> -->
+            <div class="djtop-m clearfix" style="position:relative;width: 1200px;margin:0 auto;">
+                    <div class="djtop-navl fl">
+                     <#if userName?exists>
+                     <@shiro.hasRole name="ROLE_MEMBER">
+                     <a href="http://${serverName!www.zfwx.com}/wxgr/index.do?#/tingke" target="_blank" class="col-lightgray djtop-navl-a">
+                     	听课
+                     </a>
+                     </@shiro.hasRole> 
+                     <@shiro.hasRole name="ROLE_SOCIETY">
+                     <a href="http://${serverName!www.zfwx.com}/xhht/index.do" target="_blank" class="col-lightgray djtop-navl-a">
+                     	管理平台
+                     </a>
+                     </@shiro.hasRole> 
+                     <@shiro.hasAnyRoles  name="ROLE_XADMIN,ROLE_ADMIN,ROLE_ADMIN_COURSE,ROLE_ADMIN_MARKET,ROLE_ACTIVITY,ROLE_XACTIVITY,ROLE_RECHARGE,ROLE_CHEN,ROLE_KSWC,ROLE_FINANCE,ROLE_TEACHER">
+                     <a href="${adminPath!}/admin/index.jsp" target="_blank" class="col-lightgray djtop-navl-a">
+                     	管理平台
+                     </a>
+                     </@shiro.hasAnyRoles> 
+                     <#else>
+                       <a href="http://cas.zfwx.com/login?service=http://${serverName!www.zfwx.com}/wxgr/myRoute.do?params=tingke" target="_blank" class="col-lightgray djtop-navl-a">
+                     	听课
+                       </a>
+                     </#if>
+                       <!-- <a href="http://lm.51dj.cn/" class="col-lightgray djtop-navl-a" target="_blank">联盟</a>
+                        <a href="http://www.djfw.net/" class="col-lightgray djtop-navl-a" target="_blank">建站</a>
+                        <a href="http://fk.51dj.cn/seachdemo/" class="col-lightgray djtop-navl-a" target="_blank">检索</a>-->
+                    </div>
+                    <div class="djtop-navr fr">
+                    <#if userName?exists>
+										<div class="menu-list-li01 col-lightgray">
+                     <@shiro.hasRole name="ROLE_MEMBER">
+                    <a href="http://${serverName!www.zfwx.com}/wxgr/index.do?#/tingke" class="menu-list-first" target="_blank">我的中心</a>
+                     <code class="menu-list-code"></code>
+                        <div class="son-menu-list menu-list02">
+                            <ul class="son-menu-listul02 clearfix">
+                                <li><a>${userName!}</a></li>
+                                <li><a href="http://${serverName!www.zfwx.com}/wxgr/index.do?#/tingke" target="_blank">我的学堂</a></li>
+                                <li><a href="${requestPath!}/logout?service=http://${serverName!www.zfwx.com}/wxqt/wangxiao/bdlklogin.html">退出</a></li>
+                            </ul>
+                        </div>
+                     </@shiro.hasRole> 
+                     <@shiro.hasRole name="ROLE_SOCIETY">
+                     <a href="http://${serverName!www.zfwx.com}/xhht/index.do" target="_blank" class="menu-list-first">
+                     	管理平台
+                     </a>
+                      <code class="menu-list-code"></code>
+                        <div class="son-menu-list menu-list02">
+                            <ul class="son-menu-listul02 clearfix">
+                                <li><a>${userName!}</a></li>
+                             <!--   <li><a href="http://${serverName!www.zfwx.com}/member/index.jsp#/member/DjStucourse/mycslist.do?isShow=0&listen=4" target="_blank">我的学堂</a></li>--> 
+                                <li><a href="${requestPath!}/logout?service=http://${serverName!www.zfwx.com}/wxqt/wangxiao/bdlklogin.html">退出</a></li>
+                            </ul>
+                        </div>
+                     
+                     </@shiro.hasRole> 
+                     <@shiro.hasAnyRoles  name="ROLE_ALL,ROLE_XADMIN,ROLE_ADMIN,ROLE_ADMIN_COURSE,ROLE_ADMIN_MARKET,ROLE_ACTIVITY,ROLE_XACTIVITY,ROLE_RECHARGE,ROLE_CHEN,ROLE_KSWC,ROLE_FINANCE,ROLE_TEACHER">
+                     <a href="${adminPath!}/admin/index.jsp" target="_blank" class="menu-list-first">
+                     	管理平台
+                     </a>
+                      <code class="menu-list-code"></code>
+                        <div class="son-menu-list menu-list02">
+                            <ul class="son-menu-listul02 clearfix">
+                                <li><a>${userName!}</a></li>
+                                <li><a href="${requestPath!}/logout?service=http://${serverName!www.zfwx.com}/wxqt/wangxiao/bdlklogin.html">退出</a></li>
+                            </ul>
+                        </div>
+                     </@shiro.hasAnyRoles> 
+                     </div>
+                    <#else>
+                        <a href="http://${serverName!www.zfwx.com}/wxqt/wangxiao/bdlklogin.html" class="col-lightgray list bg-login">登录</a>
+                        <a href="${basePath!}/register.do?service=${requestPath!}" class="col-lightgray list" >注册</a>
+                    </#if>   
+                        
+                    </div>
+                </div>
+            </div>
+<#if djWx.css?contains("zzy")>
+	        <div class="djtop-s bcol-brilliantgreen">
+            <div class="swapper clearfix djtop-sbg-sfjd">
+                <#if djWx.banner!="">
+                <a href="javascript:void(0);" class="puyanglogo fl"><img src="${djWx.banner}"/></a>
+                </#if>
+                <#if djWx.imageurl!="">
+                    <div class="djmark fr"><img src="${(djWx.imageurl)!}"></div>
+                </#if>
+                    <div class="djsearch fr">
+                        <input id="coursesstext" type="text" class="inputtext fl" placeholder="请输入您要查询的课程或者讲师">
+                        <a id="coursess" href="javascript:void(0);" class="searchbtn fl f16 col-back">搜索</a>
+                    </div>
+
+                </div>
+            </div>
+<#elseif djWx.imageurl!="">
+	    <div class="djtop-s bcol-brilliantgreen" style='background:url("${(djWx.imageurl)!}") no-repeat center;'>
+	        <div class="swapper clearfix djtop-sbg-sfjd">
+	            <a href="javascript:void(0);" class="puyanglogo fl">
+                </a>
+	            <div class="djsearch fr">
+	                <icon></icon>
+	                <a id="coursess" href="javascript:void(0);" class="searchbtn fr f16 col-back">搜索</a>
+	                <input id="coursesstext" type="text" class="inputtext fr" placeholder="请输入您要查询的课程或者讲师">
+	            </div>
+	        </div>
+	    </div>
+    <#else>
+        <div class="djtop-s bcol-brilliantgreen">
+            <div class="swapper clearfix djtop-sbg-sfjd">
+                <a href="javascript:void(0);" class="puyanglogo fl"><img src="${djWx.banner}"/></a>
+                <div class="djsearch fr">
+                    <icon></icon>
+                    <a id="coursess" href="javascript:void(0);" class="searchbtn fr f16 col-back">搜索</a>
+                    <input id="coursesstext" type="text" class="inputtext fr" placeholder="请输入您要查询的课程或者讲师">
+                </div>
+            </div>
+        </div>
+</#if>
+
+
+
+
+
+
+<div class="referred-provinces referred-provinces-chendu">
+    <div class="swapper" id="wxlist">
+    </div>
+</div>
+</div>
+<!--header E-->
+<!--main S-->
+<div class="djmain swapper ptb20 clearfix">
+    <div class="djmain-sides fl">
+        <!--全部课程-->
+        <div class="djmain-coursetype coursetypebg">
+            <div class="djmain-coursetypetit col-white f16">课程分类</div>
+            <ul class="djmain-coursetypelist bcol-white clearfix pt10">
+                    <#if djCsCategoryList??>
+
+
+
+                    <#list djCsCategoryList as djCsCategory>
+
+
+	                   <#if   djCsCategory_index ==0>
+                           <#if djCsCategory.cgLsml==1>
+                               <li class="whole"><a href="javascript:void(0);" cgcount="${djCsCategory.cgCount}" class="coursetype" id="${djCsCategory.cgId}">${djCsCategory.cgName}</a> </li>
+                           </#if>
+                           <#if djCsCategory.cgLsml==2>
+                               <li class="half"><a href="javascript:void(0);" cgcount="${djCsCategory.cgCount}" class="coursetype" id="${djCsCategory.cgId}">${djCsCategory.cgName}</a> </li>
+                           </#if>
+                           <#if djCsCategory.cgLsml==3>
+                               <li class="third"><a href="javascript:void(0);" cgcount="${djCsCategory.cgCount}" class="coursetype" id="${djCsCategory.cgId}">${djCsCategory.cgName}</a> </li>
+                           </#if>
+	                        <!--<li><a href="javascript:void(0);" cgcount="${djCsCategory.cgCount}" class="coursetype" id="${djCsCategory.cgId}">${djCsCategory.cgName}</a> </li>-->
+	                    </#if>
+
+	                    <#if (djCsCategory_index >0) >
+
+	                   		<#if  (djCsCategory_index  % 8) == 0>
+	                        <div class="fl djline"></div>
+                                <#if djCsCategory.cgLsml==1>
+                                    <li class="whole"><a href="javascript:void(0);" title="${djCsCategory.cgName}"   cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+	                        <!--<li><a href="javascript:void(0);" title="${djCsCategory.cgName}"   cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">-->
+                                    <#if djCsCategory.cgName?length gt 6>
+                                        ${djCsCategory.cgIntro}
+                                    <#else>
+                                        ${djCsCategory.cgName}
+                                    </#if>
+	                                </a> </li>
+                                </#if>
+                                <#if djCsCategory.cgLsml==2>
+                                    <li class="half"><a href="javascript:void(0);" title="${djCsCategory.cgName}"   cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+                                        <#if djCsCategory.cgName?length gt 6>
+                                            ${djCsCategory.cgIntro}
+                                         <#else>
+                                             ${djCsCategory.cgName}
+                                        </#if>
+                                    </a></li>
+                                </#if>
+                                <#if djCsCategory.cgLsml==3>
+                                    <li class="third"><a href="javascript:void(0);" title="${djCsCategory.cgName}"   cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+                                        <#if djCsCategory.cgName?length gt 6>
+                                            ${djCsCategory.cgIntro}
+                                            <#else>
+                                                ${djCsCategory.cgName}
+                                        </#if>
+                                    </a></li>
+                                </#if>
+
+
+	                    	 <#else >
+                                 <#if djCsCategory.cgLsml==1>
+                                     <li class="whole"><a href="javascript:void(0);" title="${djCsCategory.cgName}"  cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+                                         <#if djCsCategory.cgName?length gt 6>
+                                             ${djCsCategory.cgIntro}
+                                             <#else>
+                                                 ${djCsCategory.cgName}
+                                         </#if>
+                                     </a> </li>
+                                 </#if>
+                                 <#if djCsCategory.cgLsml==2>
+                                     <li class="half"><a href="javascript:void(0);" title="${djCsCategory.cgName}"  cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+                                         <#if djCsCategory.cgName?length gt 6>
+                                             ${djCsCategory.cgIntro}
+                                             <#else>
+                                                 ${djCsCategory.cgName}
+                                         </#if>
+                                     </a> </li>
+                                 </#if>
+                                 <#if djCsCategory.cgLsml==3>
+                                     <li class="third"><a href="javascript:void(0);" title="${djCsCategory.cgName}"  cgcount="${djCsCategory.cgCount}"  class="coursetype" id="${djCsCategory.cgId}">
+                                         <#if djCsCategory.cgName?length gt 6>
+                                             ${djCsCategory.cgIntro}
+                                             <#else>
+                                                 ${djCsCategory.cgName}
+                                         </#if>
+                                     </a> </li>
+                                 </#if>
+
+	                     	</#if>
+
+	                    </#if>
+
+
+
+                     </#list>
+
+
+
+
+
+                     </#if>    
+                   </ul>        
+                <div class="fl pt10"></div>
+            </div>
+            <!--其他学院-->
+            <div class="">
+                <!-- <div class="djmain-sidestitle"><span>培训动态</span> -->
+		          <!--<a href="javascript:void(0);" class="djmore fr">更多</a>-->
+		        <!-- </div> -->
+                <!-- <div class="newlist">
+                    <ul>
+
+                    </ul>
+                </div> -->
+            </div>
+            <!--排行榜-->
+          <!--   <div class="" id="courseppb">
+
+            </div> -->
+            <!--其他学院-->
+          <!--   <div class="">
+                <div class="djmain-sidestitle"><span>其他学院</span>
+                    
+                </div>
+            </div> -->
+            <!-- <ul class="other-colleges clearfix">
+                <#if userName?exists>
+                	<li><a href="${sfksPath!}/wxqt/index.do" class="sfksn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sfks.png" alt="司法考试"></a></li>
+                    <li><a href="${jinrongPath!}/wxqt/index.do" class="djqyn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djjr.png" alt="金融学院"></a></li>
+                    <li><a href="${qiyePath!}/wxqt/index.do" class="djqyn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djqy.png" alt="点睛企业"></a></li>
+                    <li><a href="${sfjdPath!}/wxqt/index.do" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sfjd.png" alt="司法鉴定"></a></li>
+                    <li><a href="${gongzhengPath!}/wxqt/index.do" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djgz.png" alt="公证学院"></a></li>
+                    <li><a href="${sqzyPath!}/wxqt/index.do" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sqzy.png" alt="申请执业"></a></li>
+                <#else>
+                	<li><a href="${sfksPath!}/wxqt" class="sfksn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sfks.png" alt="司法考试"></a></li>
+                    <li><a href="${jinrongPath!}/wxqt" class="djqyn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djjr.png" alt="金融学院"></a></li>
+                    <li><a href="${qiyePath!}/wxqt" class="djqyn" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djqy.png" alt="点睛企业"></a></li>
+                    <li><a href="${sfjdPath!}/wxqt/" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sfjd.png" alt="司法鉴定"></a></li>
+                    <li><a href="${gongzhengPath!}/wxqt/" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/djgz.png" alt="公证学院"></a></li>
+                    <li><a href="${sqzyPath!}/wxqt" target="_blank"><img src="./djwangxiao/lawyerschool/style/images/sqzy.png" alt="申请执业"></a></li>
+                 </#if>
+                </ul> -->
+        <!--讲师申请-->
+       <!--  <div class="">
+            <div class="djmain-sidestitle"><span>来点睛当讲师吧</span> </div>
+        </div>
+        <div class="lecturer">
+            <img src="./djwangxiao/lawyerschool/style/images/lecturer.png" alt="加入点睛讲师团队">
+            <div class="caption">如果您是法律专家，如果您能答疑解惑，就来加入点睛讲师团队吧！</div>
+            <a href="javascript:void(0);" class="lecturerbtn">加入讲师团队</a>
+        </div> -->
+
+
+    </div>
+        <div class="djmain-content fr">
+            <div class="djcontit">
+                <#if  djWx.memo?exists&&djWx.memo=='1'>
+                    <!--<a href="javascript:void(0);" class="conlist ">
+
+                    </a>-->
+                    <a href="javascript:void(0);" class="conlist conlisthover" title="讲师" ><#if  djWx.extFour?exists&&djWx.extFour==''>${shortName!}讲师<#else>${djWx.extFour!}</#if></a>
+                 <#else>
+                     <a href="javascript:void(0);" class="conlist conlisthover">选课中心</a>
+                     <a href="javascript:void(0);" class="conlist " title="讲师" ><#if  djWx.extFour?exists&&djWx.extFour==''>${shortName!}讲师<#else>${djWx.extFour!}</#if></a>
+                </#if>
+                <a href="javascript:void(0);" class="conlist" title="通知">通知公告</a>
+                <a href="javascript:void(0);" class="conlist" title="培训">培训动态</a>
+                <#if djWx.extTwo?exists&&djWx.extTwo?index_of('申请执业')!=-1 >
+                    <a href="${sqzyPath!}/wxqt/index.do" class="conlist" target="_blank">申请执业
+                </#if>
+				<#if djWx.extTwo?exists&&djWx.extTwo?index_of('企业')!=-1 >	
+                	<a href="${qiyePath!}/wxqt/index.do" class="conlist" target="_blank">企业</a>
+                </#if>
+				<#if djWx.extTwo?exists&&djWx.extTwo?index_of('政府')!=-1 >	
+                	<a href="${zffwPath!}/wxqt/index.do" class="conlist" target="_blank">政府</a>
+                </#if>
+				<#if djWx.extTwo?exists&&djWx.extTwo?index_of('居民')!=-1 >	
+                	<a href="${jmfwPath!}/wxqt/index.do" class="conlist" target="_blank">居民</a>
+                </#if>
+				<#if djWx.extTwo?exists&&djWx.extTwo?index_of('村民')!=-1 >	
+                	<a href="${cmfwPath!}/wxqt/index.do" class="conlist" target="_blank">村民</a>
+                </#if>
+				<#if djWx.extTwo?exists&&djWx.extTwo?index_of('涉外律师')!=-1 >	
+					<a href="javascript:void(0);" title="涉外律师" cgcount="32" class="conlist foreignLawer" id="1032">涉外律师</a>
+                </#if>
+                <!-- <a href="javascript:void(0);" class="conlist diantbao">点同宝</a> -->
+                <a href="javascript:void(0);" class="condian fr">我要听</a>
+            </div>
+            <div class="djcon pt10 djcon0">
+                <div class="djcon-title clearfix">
+                    <#if  djWx.memo?exists&&djWx.memo=='1'>
+                       <!--!&#45;&#45; <ul class="djcon-typelist fl" style="display:none">&ndash;&gt;-->
+                    <#else>
+                       <!-- <ul class="djcon-typelist fl">-->
+                    </#if>
+                    <!--<ul class="djcon-typelist fl">-->
+                        <!--<li><a href="javascript:void(0);" id="coursetj" class="first listhover">推荐课程</a> </li>
+                        <li><a href="javascript:void(0);" id="coursenews" >最新上传</a> </li>
+                        <li><a href="javascript:void(0);" id="coursehot">每周热课</a> </li>
+                        <li><a href="javascript:void(0);" id="coursespecial">特价课程</a> </li>
+                        <li><a href="javascript:void(0);" id="courseall" class="">全部课程</a> </li>
+                    </ul>-->
+                <div class="fr djpage01"><span> </span></div>
+                <!-- <a href="${requestPath!}/help/help.htm" class="djcon-course fr" target="_blank">常见问题</a> -->
+                <#if userName?exists>
+                    <!-- <a href="http://${serverName!www.zfwx.com}/member/index.jsp#/member/DjShoppingcart/getShoppingCartList.do" target="_blank" class="djcon-collect fr">收藏夹</a> -->
+                    <a href="http://${serverName!www.zfwx.com}/wxgr/index.do?#/myStore" target="_blank" class="djcon-collect fr">收藏夹</a>
+                    <#else>
+                    <a href="${casPath!}/login?service=http://${serverName!www.zfwx.com}/wxgr/myRoute.do?params=myStore"  class="djcon-collect fr">收藏夹</a>
+                    </#if>
+                </div>
+                <div class="djcon-list">
+                    <ul class="djcon-listu">
+
+                    </ul>
+                </div>
+                <div class="clearfix pager">
+                    <div class="djpage02 fr">
+                        <div class="pageform"><input type="text" class="pagetext" /><a href="javascript:void(0);" class="pagebtn" id="pagebtn">跳转</a> </div>
+                        <div class="pagenum"><a href="javascript:void(0)" id="previous02" class="pleft hidden"></a><span class="fl"><code class="pageindex">1</code>/<code class="pagecount">1</code></span><a href="javascript:void(0)" id="next02" class="pright"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="djcon pt10 djcon1">
+            </div>
+            <div class="djcon pt10 djcon2">
+            </div>
+            <div class="djcon pt10 djcon3">
+            </div>
+        </div>
+    </div>
+    <!--main E-->
+    <!--footer S-->
+    <div class="footer">
+        <div class="swapper bcol-sfjd clearfix col-white ptrbl30" style="border-top:3px solid #0b129f">
+                <p style="text-align:center;color:#000">版权所有Copyright@ 2011-2014</p>
+                <p style="text-align:center;color:#000">主办：<span style="color:#0000ff">北京大学林肯研究院 城市发展与土地政策研究中心</span> </p>
+                <p style="text-align:center;color:#000">技术与教学支持：<span style="color:#0000ff">点睛网校</span></p>
+        </div>
+    </div>
+    <!--footer E-->
+</div>
+<!--点同宝-->
+<!-- <div class="advertise_ground"></div>
+<div class="dtb_advertise">
+    <icon class="close_advertise"></icon>
+    <a href="http://t.cn/RJSrB2D">
+        <img src="${requestPath!}/djwfed/images/common/diantbao.png"/>
+    </a>
+</div> -->
+<script type="text/javascript">
+    $(function(){
+        $(".advertise_ground").on("click",function(){
+            $(".advertise_ground").hide();
+            $(".dtb_advertise").hide();
+        })
+        $(".djcontit").on("click",".diantbao",function(){
+            $(".advertise_ground").show();
+            $(".dtb_advertise").show()
+        });
+        $(".close_advertise").on("click",function(){
+            $(".advertise_ground").hide();
+            $(".dtb_advertise").hide()
+        })
+        $(".wxswkt").on("mouseover",function(){
+            layer.tips("尚未开通...", this, {
+                tips: [1, '#44c3b1'],
+                time:60000,
+                success: function(layero, index){
+                    $(".wxswkt").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+        $(".foottip").on("mouseover",function(){
+            layer.tips("<img src='./djwangxiao/lawyerschool/style/images/ervm.jpg'>", this, {
+                tips: [1, '#fff'],
+                time:60000,
+                success: function(layero, index){
+                    $(".foottip").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+
+        $(".sfks").on("mouseover",function(){
+            layer.tips("建设中...", this, {
+                tips: [1, '#44c3b1'],
+                time:60000,
+                success: function(layero, index){
+                    $(".sfks").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+        $(".djqy").on("mouseover",function(){
+            layer.tips("建设中...", this, {
+                tips: [1, '#44c3b1'],
+                time:60000,
+                success: function(layero, index){
+                    $(".djqy").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+        $(".foottip02").on("mouseover",function(){
+            layer.tips("<img src='./djwangxiao/lawyerschool/style/images/ervm.jpg'>", this,{
+                tips: [1, '#fff'],
+                time:60000,
+                success: function(layero, index){
+                    $(".foottip02").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+        $(".footweibo").on("mouseover",function(){
+            layer.tips("<img src='./djwangxiao/lawyerschool/style/images/erweimaweibo.png'>", this,{
+                tips: [1, '#fff'],
+                time:60000,
+                success: function(layero, index){
+                    $(".footweibo").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+        $(".footweixin").on("mouseover",function(){
+            layer.tips("<img src='./djwangxiao/lawyerschool/style/images/erweimaweixin.png'>", this,{
+                tips: [1, '#fff'],
+                time:60000,
+                success: function(layero, index){
+                    $(".footweixin").on("mouseout",function(){
+                        layer.closeAll();
+                    });
+                }
+            });
+            return false;
+        });
+
+        $(".menu-list-li").on("mouseover",function(){
+            $(this).find(".menu-list-first").addClass("menu-list-firsthover");
+            $(this).css({"background":"#eeeeee","color":"#000"});
+            $(".menu-list01").css({"display":"block"});
+        });
+        $(".menu-list-li").on("mouseout",function(){
+            $(this).find(".menu-list-first").removeClass("menu-list-firsthover");
+            $(this).css({"background":"#000","color":"#c3c3c3"});
+            $(".menu-list01").css("display","none");
+        });
+
+        $(".menu-list-li01").on("mouseover",function(){
+            $(this).find(".menu-list-first").addClass("menu-list-firsthover");
+            $(this).css({"background":"#eeeeee","color":"#000"});
+            $(".menu-list02").css({"display":"block"});
+        });
+        $(".menu-list-li01").on("mouseout",function(){
+            $(this).find(".menu-list-first").removeClass("menu-list-firsthover");
+            $(this).css({"background":"#000","color":"#c3c3c3"});
+            $(".menu-list02").css("display","none");
+        });
+        if (window.PIE) {
+
+            $(".lecturerbtn,.hot,.pagetext,.pagebtn,.pagenum .pleft,.pagenum .pright,.sides-first img,.sides-second img,.sides-third img,.djmain-sideslist .sp").each(function(){
+                PIE.attach(this);
+            });
+        };
+    })
+    function addFavorite() {
+        var url = window.location;
+        var title = document.title;
+        try {
+            window.external.addFavorite(url, title);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(title, url, "");
+            }
+            catch (e) {
+                alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+</script>
+<!-- 排行榜模板 -->
+<textarea id="courseppbtemplate" style="display:none">
+    <div class="djmain-sidestitle"><span>排行榜</span></div>
+    <div class="djmain-sidesimg"></div>
+    <dl class="djmain-sideslist">
+        <dt class="clearfix">
+        <div class="sides-second fl">
+            {#if $T[1].photourl == null}
+            {#if $T[1].sex==0}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/F1.png">
+            {#elseif  $T[1].sex==1}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M1.png">
+            {#else  $T[1].sex==2}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M1.png">
+            {#/if}
+            {#else}
+            <img src="${basePath!}/photo/{$T[1].photourl}">
+            {#/if}
+            <span class="sp">2</span>
+            <div class="djmain-sideslistwz">
+                <span>{$T[1].realName}</span>
+                <span class="sp01">{$T[1].totaltkl}</span>
+            </div>
+        </div>
+
+        <div class="sides-first fl">
+            {#if $T[0].photourl == null}
+            {#if $T[0].sex==0}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/F1.png">
+            {#elseif  $T[0].sex==1}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M1.png">
+            {#else  $T[0].sex==2}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M2.png">
+            {#/if}
+            {#else}
+            <img src="${basePath!}/photo/{$T[0].photourl}">
+            {#/if}
+            <span class="sp">1</span>
+            <div class="djmain-sideslistwz">
+                <span>{$T[0].realName}</span>
+                <span class="sp01">{$T[0].totaltkl}</span>
+            </div>
+        </div>
+        <div class="sides-third fl">
+            {#if $T[2].photourl == null}
+            {#if $T[2].sex==0}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/F1.png">
+            {#elseif  $T[2].sex==1}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M1.png">
+            {#else  $T[2].sex==2}
+            <img src="${requestPath!}/djwangxiao/lawyerschool/style/images/M3.png">
+            {#/if}
+            {#else}
+            <img src="${basePath!}/photo/{$T[2].photourl}">
+            {#/if}
+            <span class="sp">3</span>
+            <div class="djmain-sideslistwz">
+                <span>{$T[2].realName}</span>
+                <span class="sp01">{$T[2].totaltkl}</span>
+            </div>
+        </div>
+        </dt>
+        {#foreach $T as list}
+        {#if $T.list$index>=3}
+        <dd class="clearfix"><span class="listnum">{$T.list$index+1}</span><span class="name alignleft">{$T.list.realName}</span><span class="time">{$T.list.totaltkl}</span><span class="unit">分钟/周</span></dd>
+        {#/if}
+        {#/for}
+    </dl>
+</textarea>
+<!-- 排行榜模板 -->
+<textarea id="firstLevelTitleTemplate" style="display:none">
+
+</textarea>
+<!--课程列表模板-->
+<textarea id="courselisttemplate" style="display:none">
+	<input type="hidden" value="{$T.condition}" id="identifying">
+	<input type="hidden" value="djcon0" class="identifying">
+	<input type="hidden" value="" id="courseId">
+    <input type="hidden" value={$T.count} id="count">
+    {#foreach $T.list as lists}
+
+    <li class="clearfix" id={$T.lists.courseId} >
+        <input type="hidden" value={$T.lists.courseId} class="courseId">
+        <input type="hidden" value={$T.lists.payType} class="payType">
+        <input type="hidden" value={$T.lists.csDiscountprice} class="csDiscountprice">
+        <input type="hidden" value={$T.lists.csName} class="csName">
+        <input type="hidden" value={$T.lists.pCourseId} class="pCourseId">
+        <div class="fl listu-img" >
+            <#if userName?exists>
+    	    <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/eduschoolLessonDetail.do?path=bdlk&courseId={$T.lists.courseId}&wxId=${(id)!}" class="title" target="_blank">
+                    <#else>
+	        <a href="http://${serverName!www.zfwx.com}/eduschoolLessonDetail.do?path=bdlk&courseId={$T.lists.courseId}&wxId=${(id)!}" class="title" target="_blank">
+            </#if>
+        <img src="http://image.zfwx.com{$T.lists.csImg}" width="174" height="108" alt="{$T.lists.tchNames}:{$T.lists.csName}" ></a></div>
+        <div class="fl listu-wz ml20" >
+            <#if userName?exists>
+    	    <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/eduschoolLessonDetail.do?path=bdlk&courseId={$T.lists.courseId}&wxId=${(id)!}" class="title" target="_blank" title="{$T.lists.csName}">
+         <#else>
+	        <a href="http://${serverName!www.zfwx.com}/eduschoolLessonDetail.do?path=bdlk&courseId={$T.lists.courseId}&wxId=${(id)!}" class="title" target="_blank" title="{$T.lists.csInfo}">
+         </#if>
+            {$T.lists.csShortName}
+            {#if $T.lists.csTjOrder > 0}
+            <code class="list-tj">推荐</code>
+            {#/if}
+            {#if $T.lists.discount}
+            <code class="list-special">特价</code>
+            {#/if}
+            </a>
+            <div  class="wz01">
+                <span>讲师:<code>{$T.lists.tchNames}</code></span>
+                <span class="ml30">时长:<code title="{$T.lists.csKs}课时">{$T.lists.csHour}分钟</code></span>
+                <span class="ml30">录制:<code>{DJWX.djDate.djStringDate($T.lists.transcribeTime)}</code></span>
+            </div>
+            <div  class="wz02">
+            {#if $T.condition == "coursehot"}
+                <a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=3&pageSize=240&username=${userName!}" class="sp01">学过:<code>{$T.lists.csStudyweeknum}</code></a>
+               {#else}
+               <a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=3&pageSize=240&username=${userName!}" class="sp01">学过:<code>{$T.lists.csStudynum}</code></a>
+                {#/if}
+                <a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=2&pageSize=80&username=${userName!}" class="sp02 ml30">赞过:<code>{$T.lists.csLike}</code></a>
+                <a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" class="sp03 ml30">评论:<code>{$T.lists.csCommentnum}</code></a>
+            </div>
+        </div>
+        <div class="fr djbtns">
+        {#if $T.lists.isBuy }
+         <#if userName?exists>
+    	    <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/schoolLessonDetail.do?courseId={$T.lists.courseId}" class="djlook" target="_blank">查看</a>
+         <#else>
+	        <a href="http://${serverName!www.zfwx.com}/schoolLessonDetail.do?courseId={$T.lists.courseId}"  class="djlook" target="_blank">查看</a>
+         </#if> 
+		    <a href="javascript:void(0)"  class="djbuysuc" onClick="toPlayVedio({$T.lists.pCourseId})">听课</a>
+        {#else}
+         <#if userName?exists>
+    	    <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/schoolLessonDetail.do?courseId={$T.lists.courseId}" class="djlook" target="_blank">查看</a>
+         <#else>
+	        <a href="http://${serverName!www.zfwx.com}/schoolLessonDetail.do?courseId={$T.lists.courseId}"  class="djlook" target="_blank">查看</a>
+         </#if>        
+		    <a href="javascript:void(0);" class="djbuy">听课</a>
+        {#/if}
+        </div>
+        {#if $T.lists.csClicktimes==0}
+
+        {#elseif $T.lists.csClicktimes==1}
+              <div class="fr djplr">
+                    <a class="djpicimg1-01 djpicimg" title="{$T.lists.plList[0].commentInfo}"  href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[0].photoUrl}"></a>
+                    <a class="djpicimgb djpicdisplayn" href="javascript:void(0);" ></a>
+            <span class="djpicwz djpicdisplayn">
+                <div class="djpicwzb">
+                    <div class="djpicwzn"></div>
+                    <div class="djpicwzj"></div>
+                </div>
+            </span>
+                    <div class="djpicimgb-zz djpicdisplayn"><a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" style="display:block;width:100%;height:100%"></a></div>
+                </div>
+       {#elseif $T.lists.csClicktimes==2}
+              <div class="fr djplr">
+                    <a class="djpicimg2-01 djpicimg" title="{$T.lists.plList[0].commentInfo}"  href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[0].photoUrl}"></a>
+                    <a class="djpicimg2-02 djpicimg" title="{$T.lists.plList[1].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[1].photoUrl}"></a>
+                    <a class="djpicimgb djpicdisplayn" href="javascript:void(0);" ></a>
+            <span class="djpicwz djpicdisplayn">
+                <div class="djpicwzb">
+                    <div class="djpicwzn"></div>
+                    <div class="djpicwzj"></div>
+                </div>
+            </span>
+                    <div class="djpicimgb-zz djpicdisplayn"><a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" style="display:block;width:100%;height:100%"></a></div>
+                </div>
+        {#elseif $T.lists.csClicktimes==3}
+              <div class="fr djplr">
+                    <a class="djpicimg3-01 djpicimg" title="{$T.lists.plList[0].commentInfo}"  href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[0].photoUrl}"></a>
+                    <a class="djpicimg3-02 djpicimg" title="{$T.lists.plList[1].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[1].photoUrl}"></a>
+                    <a class="djpicimg3-03 djpicimg" title="{$T.lists.plList[2].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[2].photoUrl}"></a>
+                    <a class="djpicimgb djpicdisplayn" href="javascript:void(0);" ></a>
+            <span class="djpicwz djpicdisplayn">
+                <div class="djpicwzb">
+                    <div class="djpicwzn"></div>
+                    <div class="djpicwzj"></div>
+                </div>
+            </span>
+                    <div class="djpicimgb-zz djpicdisplayn"><a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" style="display:block;width:100%;height:100%"></a></div>
+                </div>
+         {#elseif $T.lists.csClicktimes==4}
+              <div class="fr djplr">
+                    <a class="djpicimg4-01 djpicimg" title="{$T.lists.plList[0].commentInfo}"  href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[0].photoUrl}"></a>
+                    <a class="djpicimg4-02 djpicimg" title="{$T.lists.plList[1].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[1].photoUrl}"></a>
+                    <a class="djpicimg4-03 djpicimg" title="{$T.lists.plList[2].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[2].photoUrl}"></a>
+                    <a class="djpicimg4-04 djpicimg" title="{$T.lists.plList[3].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[3].photoUrl}"></a>
+                    <a class="djpicimgb djpicdisplayn" href="javascript:void(0);" ></a>
+            <span class="djpicwz djpicdisplayn">
+                <div class="djpicwzb">
+                    <div class="djpicwzn"></div>
+                    <div class="djpicwzj"></div>
+                </div>
+            </span>
+                    <div class="djpicimgb-zz djpicdisplayn"><a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" style="display:block;width:100%;height:100%"></a></div>
+                </div>
+         {#else}
+              <div class="fr djplr">
+                    <a class="djpicimg01 djpicimg" title="{$T.lists.plList[0].commentInfo}"  href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[0].photoUrl}"></a>
+                    <a class="djpicimg02 djpicimg" title="{$T.lists.plList[1].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[1].photoUrl}"></a>
+                    <a class="djpicimg03 djpicimg" title="{$T.lists.plList[2].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[2].photoUrl}"></a>
+                    <a class="djpicimg04 djpicimg" title="{$T.lists.plList[3].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[3].photoUrl}"></a>
+                    <a class="djpicimg05 djpicimg" title="{$T.lists.plList[4].commentInfo}" href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" ><img src="{$T.lists.plList[4].photoUrl}"></a>
+                    <a class="djpicimgb djpicdisplayn" href="javascript:void(0);" ></a>
+            <span class="djpicwz djpicdisplayn">
+                <div class="djpicwzb">
+                    <div class="djpicwzn"></div>
+                    <div class="djpicwzj"></div>
+                </div>
+            </span>
+                    <div class="djpicimgb-zz djpicdisplayn"><a href="http://${serverName!www.zfwx.com}/schoolStudyInfo.do?courseId={$T.lists.courseId}&type=1&pageSize=10&username=${userName!}" style="display:block;width:100%;height:100%"></a></div>
+                </div>
+            {#/if}
+
+
+    </li>
+     {#/for}
+    <script type="text/javascript" src="${requestPath!}/djwfed/scripts/common/portrait_enlarge.js"></script>
+    <!-- // <script type="text/javascript" src="${requestPath!}/djwfed/scripts/common/layerbox.js"></script> -->
+    <script type="text/javascript" src="${requestPath!}/djyFe/djyJsAPI/djwx/layerbox.js"></script>
+
+</textarea>
+<!--课程列表模板-->
+<!--课程列表模板-->
+<!--弹出模板-->
+<!--<textarea id="dbSurplus" style="display:none">-->
+    <!--<div class='dj-buy clearfix'>-->
+        <!--<input type='hidden' class='course_id' value={$T.courseId}>-->
+        <!--<p class='p03'><span>选</span><span class='mark-blue courseName'>{$T.courseName}</span></p>-->
+        <!--<p class='p02'>消费：<span class='coursePrice'><span class='mark-red mark-big mark-arial '>{$T.price}</span>&nbsp;点币</span></p>-->
+        <!--<p class='p02'>现有：<span class='userAmont'><span class='mark-red mark-arial'>{$T.currentAmount}</span>&nbsp;点币</span><span class='preferential' style='display: none;'>根据<a target='_blank' href='${bbsPath!}/dyhd/425_2.jhtml#12'>[余额赠课]</a>特权，您仍可购买，</span></p>-->
+        <!--<p class='p02'>剩余：<span class='buysy02 remainAmont'><span class='mark-red mark-arial'>{$T.remainAmount}</span>&nbsp;点币</span></p>-->
+    <!--</div>-->
+<!--</textarea>-->
+
+<textarea id="dbInadequate" style="display:none">
+	<input type="hidden" value={$T.courseId} id="courseIds">
+	<input type="hidden" value={$T.remainAmount*-1} id="remainAmount">
+    <div class='dj-buy clearfix'>
+        <p class='p03'>选<span class='mark-blue courseName'>{$T.courseName}</span></p>
+        <p class='p02'>消费:<span class='coursePrice'><span class='mark-red mark-arial'>{$T.price}</span>&nbsp;点币</span></p>
+        <p class='p02'>现有:<span class='userAmont'><span class='mark-red mark-arial'>{$T.currentAmount}</span>&nbsp;点币</span></p>
+        <p class='p02'><span class='not-money'>余额不足</span><span class='buysy remainAmont'>需支付&nbsp;<span class='mark-red mark-big mark-arial' id='buyye'>{$T.remainAmount*-1}</span>&nbsp;元</span></p>
+    </div>
+</textarea>
+
+<textarea id="dbcashPay" style="display:none">
+	<input type="hidden" value={$T.courseId} id="courseIds">
+	<input type="hidden" value={$T.csDiscountprice} id="csDiscountprices">
+    <div class='dj-buy clearfix'>
+        <p class='p03'>选<span class='mark-blue courseName'>{$T.csName}</span></p>
+        <p class='p03'><span class='remainAmont'>需支付&nbsp;<span class='mark-red mark-big mark-arial' id='buyye'>&nbsp;{$T.csDiscountprice}</span>&nbsp;元</span></p>
+    </div>
+</textarea>
+<textarea id="dbBuySuccess" style="display:none">
+    <input type='hidden' class='stucw_id' value={$T.stucwId}><div class='dj-buy' id='buysuccess' style="height:255px"><p class='p04'><span class='succses_iocn'><img src='./djwangxiao/lawyerschool/style/images/suc_icon.png' alt=''></span>恭喜您购买成功！</p><div><p><img src='./djwangxiao/lawyerschool/style/images/ervm.jpg'></p><p>请扫我，安装APP用手机听课！</p></div></div>
+</textarea>
+
+<textarea id="dbSurplus" style="display:none">
+    {#if $T.payType==0}
+         <div class='dj-buy clearfix'>
+            <input type='hidden' class='course_id' id="courseIds" value={$T.courseId}>
+            <p class='p03'><span class='mark-blue courseName'>《{$T.courseName}》</span></p>
+             {#if $T.currentAmount-0<$T.price}<!--点币不足-->
+            <span class="fl buybyCoin nomalPay notenough zero">消费：{$T.price}点币</span>
+              {#else}<!--点币充足-->
+            <span class="fl buybyCoin nomalPay zero">消费：{$T.price}点币</span>
+            {#/if}
+              <span class="fl nomalPay zero">现有：{$T.currentAmount}点币</span>
+        </div>
+        <div class="ptrbl10 icon">
+            {#if $T.currentAmount-0<$T.price}
+              <p class="layui-info">还需支付{$T.price-$T.currentAmount}元</p>
+             <a class="btn-zfb fl" onclick="xjbuyYe('alipay',{$T.price-$T.currentAmount},1)"></a>
+             <a class="btn-kq fl" href="javascript:void(0);" onclick="xjbuyYe('weixin',{$T.price-$T.currentAmount},1)"></a></br>
+            <p  onclick="buyVip()" class="buy_vip">建议购买VIP<b>超省</b></p>
+            {#else}
+           <a class="layui-layer-btn0 iconPayBtn iconPayBtn1 zero">确定购买</a>
+            {#/if}
+        </div>
+    <!--现金-->
+    {#elseif $T.payType==1}
+         <div class='dj-buy clearfix'>
+            <input type='hidden' class='course_id' id="courseIds" value={$T.courseId}>
+            <p class='p03'><span class='mark-blue courseName'>《{$T.courseName}》</span></p>
+            <span class="fl  cashBuy nomalPay only one">优惠价：<span class="price">{$T.csDiscountprice}</span>元</span>
+         </div>
+         <div class="ptrbl10 cash">
+             <a class="btn-zfb fl" onclick="xjbuyYe('alipay',{$T.csDiscountprice},0)"></a>
+             <a class="btn-kq fl" href="javascript:void(0);" onclick="xjbuyYe('weixin',{$T.csDiscountprice},0)"></a></br>
+        </div>
+    {#else}
+        <div class='dj-buy clearfix'>
+            <input type='hidden' class='course_id' id="courseIds" value={$T.courseId}>
+            <p class='p03'><span class='mark-blue courseName'>《{$T.courseName}》</span></p>
+             {#if $T.currentAmount-0<$T.price}
+            <span class="fl iconPay buybyCoin nomalPay notenough">原价：{$T.price}点币</span>
+              {#else}
+            <span class="fl iconPay buybyCoin nomalPay">原价：{$T.price}点币</span>
+            {#/if}
+            <span class="fl cashPay cashBuy currentPay">优惠价：<span class="price">{$T.csDiscountprice}</span>元</span>
+        </div>
+
+        <div class="ptrbl10 icon icon2">
+            {#if $T.currentAmount-0<$T.price}
+              <p class="layui-info">还需支付{$T.price-$T.currentAmount}元</p>
+             <a class="btn-zfb fl" onclick="xjbuyYe('alipay',{$T.price-$T.currentAmount},1)"></a>
+             <a class="btn-kq fl" href="javascript:void(0);" onclick="xjbuyYe('weixin',{$T.price-$T.currentAmount},1)"></a></br>
+            <p  onclick="buyVip()" class="buy_vip">建议购买VIP<b>超省</b></p>
+            {#else}
+             <a class="layui-layer-btn0 iconPayBtn iconPayBtn2">确定购买</a>
+            {#/if}
+        </div>
+         <div class="ptrbl10 cash">
+             <a class="btn-zfb fl" onclick="xjbuyYe('alipay',{$T.csDiscountprice},0)"></a>
+             <a class="btn-kq fl" href="javascript:void(0);" onclick="xjbuyYe('weixin',{$T.csDiscountprice},0)"></a></br>
+        </div>
+    {#/if}
+</textarea>
+
+<!--培训动态列表模板-->
+<textarea id="newslisttemplate" style="display:none">
+    <input type="hidden" value="djcon3" class="identifying">
+    {#foreach $T.list as lists}
+        <li><a href="javascript:void(0);" nid="{$T.lists.id}" title="{$T.lists.title}">{$T.lists.shortTitle}</a> </li>
+    {#/for}
+</textarea>
+<!--培训动态列表模板-->
+<!--通知列表模板-->
+<textarea id="noticelisttemplate" style="display:none">
+    <input type="hidden" value="" class="identifying noticepx">
+     <div class="djcon-title clearfix">
+       <ul class="djcon-typelist fl">
+           {#foreach $T.list as lists}
+           {#if $T.condition==$T.lists$index}
+           <li><a href="javascript:void(0);" categoryid="{$T.lists.id}"  class="first listhover">{$T.lists.name}</a> </li>
+           {#else}
+           <li><a href="javascript:void(0);" categoryid="{$T.lists.id}"  class="first">{$T.lists.name}</a> </li>
+           {#/if}
+           {#/for}
+       </ul>
+   </div>
+    <div class="djcon-list">
+        <ul class="djcon-newslist">
+        {#foreach $T.list as lists}
+            {#if $T.lists.djLists != null}
+                {#foreach $T.lists.djLists as listed}
+        {#if $T.listed.orgId==1}
+                <li class="clearfix">
+                    <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                    <code class="fl noticesp01">点睛</code>
+                    <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                </li>
+         {#else}
+        <#if lxName=='律所'>
+             {#if $T.listed.orgId==${djWx.orgid?c}}
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                        <code class="fl noticesp03">${shortName!}</code>
+                        <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                    </li>
+             {#else}
+                      <li class="clearfix">
+                        <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                        <code class="fl noticesp02">协会</code>
+                        <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                    </li>
+             {#/if}
+         <#elseif lxName=='律协'>
+                <li class="clearfix">
+                    <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                    <code class="fl noticesp02">协会</code>
+                    <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                </li>
+         </#if>
+          {#/if}
+          {#/for}
+           {#/if}
+            {#/for}
+        </ul>
+    </div>
+
+     <div class="clearfix pager">
+        <div class="djpage02 fr">
+            <div class="pageform">
+                <input type="text" class="pagetext" />
+                <a href="javascript:void(0);" class="pagebtn" id="pagebtn1">跳转</a>
+            </div>
+            <div class="pagenum">
+                 <a href="javascript:void(0)" id="previous021" class="pleft hidden"></a>
+                 <span class="fl"><code class="pageindex">1</code>/<code class="pagecount">1</code></span>
+                 <a href="javascript:void(0)" id="next021" class="pright"></a>
+            </div>
+        </div>
+     </div>
+</textarea>
+
+<!--通知列表模板-->
+<!--通知列表模板二级 之协会和点睛通知-->
+ <textarea id="noticelistejtemplate" style="display:none">
+        {#foreach $T.list as lists}
+        {#if $T.lists.djLists != null}
+        {#foreach $T.lists.djLists as listed}
+        <li class="clearfix">
+            <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea" title="{$T.listed.title}">{$T.listed.title}</a>
+            <span class="fl"></span><span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+        </li>
+	{#/for}
+        {#/if}
+        {#/for}
+</textarea>
+<!--通知列表模板二级-->
+<!--通知列表模板二级之最新消息-->
+<textarea id="noticelistejtemplate1" style="display:none">
+          {#foreach $T.list as lists}
+            {#if $T.lists.djLists != null}
+                {#foreach $T.lists.djLists as listed}
+        {#if $T.listed.orgId==1}
+                <li class="clearfix">
+                    <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                    <code class="fl noticesp01">点睛</code>
+                    <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                </li>
+         {#else}
+        <#if lxName=='律所'>
+              {#if $T.listed.orgId==${djWx.orgid?c}}
+                    <li class="clearfix">
+                        <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                        <code class="fl noticesp03">${shortName!}</code>
+                        <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                    </li>
+              {#else }
+                      <li class="clearfix">
+                        <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                        <code class="fl noticesp02">协会</code>
+                        <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                    </li>
+              {#/if}
+         <#elseif lxName=='律协'>
+                <li class="clearfix">
+                    <a href="javascript:void(0);" nid="{$T.listed.id}" class="noticea fl" title="{$T.listed.title}">{$T.listed.title}</a>
+                    <code class="fl noticesp02">协会</code>
+                    <span class="fr">{DJWX.djCommon.djStringDate($T.listed.createTime)}</span>
+                </li>
+         </#if>
+          {#/if}
+          {#/for}
+           {#/if}
+            {#/for}
+</textarea>
+<!--通知列表模板二级-->
+
+<!--面授列表模板-->
+<textarea id="mShowlisttemplate" style="display:none">
+    <input type="hidden" value="" class="identifying noticepx">
+     <div class="djcon-title clearfix">
+       <ul class="djcon-typelist fl">
+           {#foreach $T.list as lists}
+           {#if $T.condition==$T.lists$index}
+           <li><a href="javascript:void(0);" categoryid="{$T.lists.id}"  class="first listhover">{$T.lists.name}</a> </li>
+           {#else}
+           <li><a href="javascript:void(0);" categoryid="{$T.lists.id}"  class="first">{$T.lists.name}</a> </li>
+           {#/if}
+           {#/for}
+       </ul>
+   </div>
+    <div class="djcon-list">
+        <ul class="djcon-newslist">
+        {#foreach $T.list as lists}
+            {#if $T.lists.djLists != null}
+                {#foreach $T.lists.djLists as listed}
+        {#if $T.listed.createOrgId==1}
+                <li class="clearfix">
+                      <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                          <#else>
+                        <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                      </#if>
+                     {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">点睛.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">点睛.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">点睛.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">点睛.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">点睛.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">点睛.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp01">点睛</code>
+                         {#/if}
+
+                       <#if userName?exists>
+                         <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          <#else>
+                        <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                      </#if>
+
+                    {#if $T.listed.status==0}
+                      <#if userName?exists>
+                               <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                      <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+
+                     {#else}
+                      <#if userName?exists>
+                        <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                      <#else>
+                             <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+                     {#/if}
+                </li>
+         {#else}
+        <#if lxName=='律所'>
+             {#if $T.listed.orgId==${djWx.orgid?c}}
+                    <li class="clearfix">
+                          <#if userName?exists>
+                               <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                          <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                           </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0"> ${shortName!}.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1"> ${shortName!}.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2"> ${shortName!}.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3"> ${shortName!}.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4"> ${shortName!}.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5"> ${shortName!}.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp03"> ${shortName!}</code>
+                         {#/if}
+                          <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          <#else>
+                                <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          </#if>
+                     {#if $T.listed.status==0}
+                          <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          <#else>
+                                 <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          </#if>
+                     {#else}
+                          <#if userName?exists>
+                               <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          </#if>
+                     {#/if}
+                    </li>
+             {#else}
+                      <li class="clearfix">
+                            <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                            <#else>
+                                 <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                            </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">协会.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">协会.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">协会.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">协会.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">协会.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">协会.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+                       <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                        <#else>
+                             <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                        </#if>
+                     {#if $T.listed.status==0}
+                        <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                        <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                        </#if>
+                     {#else}
+                        <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                        <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                        </#if>
+                     {#/if}
+                    </li>
+             {#/if}
+         <#elseif lxName=='律协'>
+                <li class="clearfix">
+                        <#if userName?exists>
+                           <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                        <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                        </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">协会.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">协会.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">协会.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">协会.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">协会.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">协会.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+                       <#if userName?exists>
+                           <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                        <#else>
+                            <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                        </#if>
+                    {#if $T.listed.status==0}
+                         <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                        <#else>
+                            <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                        </#if>
+                     {#else}
+                      <#if userName?exists>
+                         <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                      <#else>
+                        <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                      </#if>
+                     {#/if}
+                </li>
+         </#if>
+          {#/if}
+          {#/for}
+           {#/if}
+            {#/for}
+        </ul>
+    </div>
+
+     <div class="clearfix pager">
+        <div class="djpage02 fr">
+            <div class="pageform">
+                <input type="text" class="pagetext" />
+                <a href="javascript:void(0);" class="pagebtn" id="pagebtn1">跳转</a>
+            </div>
+            <div class="pagenum">
+                 <a href="javascript:void(0)" id="previous021" class="pleft hidden"></a>
+                 <span class="fl"><code class="pageindex">1</code>/<code class="pagecount">1</code></span>
+                 <a href="javascript:void(0)" id="next021" class="pright"></a>
+            </div>
+        </div>
+     </div>
+</textarea>
+<!--面授列表模板-->
+<!--面授二级模板-->
+<textarea id="mShowlistejtemplate" style="display:none">
+       {#foreach $T.list as lists}
+            {#if $T.lists.djLists != null}
+                {#foreach $T.lists.djLists as listed}
+        {#if $T.listed.createOrgId==1}
+                <li class="clearfix">
+                       <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                          <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+                        {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp01">点睛</code>
+                         {#/if}
+
+
+                      <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       <#else>
+                             <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       </#if>
+                    {#if $T.listed.status==0}
+                        <#if userName?exists>
+                             <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+                     {#else}
+                       <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+                     {#/if}
+                </li>
+         {#else}
+        <#if lxName=='律所'>
+             {#if $T.listed.orgId==${djWx.orgid?c}}
+                    <li class="clearfix">
+                       <#if userName?exists>
+                             <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp03"> ${shortName!}</code>
+                         {#/if}
+
+                           <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                           <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                           </#if>
+
+                     {#if $T.listed.status==0}
+
+                          <#if userName?exists>
+                                 <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                           <#else>
+                                 <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                           </#if>
+
+
+                     {#else}
+
+                           <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                           <#else>
+                                <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                           </#if>
+                     {#/if}
+                    </li>
+             {#else}
+                      <li class="clearfix">
+                            <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                           <#else>
+                                <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                           </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+
+                           <#if userName?exists>
+                                  <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                           <#else>
+                                   <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                           </#if>
+
+                   {#if $T.listed.status==0}
+                       <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+                     {#else}
+                       <#if userName?exists>
+                           <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       <#else>
+                            <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+                     {#/if}
+                    </li>
+             {#/if}
+         <#elseif lxName=='律协'>
+                <li class="clearfix">
+                      <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                          <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+
+                       <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       <#else>
+                            <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       </#if>
+
+                     {#if $T.listed.status==0}
+                       <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+
+
+                     {#else}
+                       <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+
+                     {#/if}
+                </li>
+         </#if>
+          {#/if}
+          {#/for}
+           {#/if}
+            {#/for}
+</textarea>
+<!--面授二级模板  最新-->
+<textarea id="mShowlistejtemplate1" style="display:none">
+       {#foreach $T.list as lists}
+            {#if $T.lists.djLists != null}
+                {#foreach $T.lists.djLists as listed}
+        {#if $T.listed.createOrgId==1}
+                <li class="clearfix">
+                      <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                             <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+                        {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">点睛.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">点睛.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">点睛.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">点睛.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">点睛.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">点睛.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp01">点睛</code>
+                         {#/if}
+                      <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       <#else>
+                          <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       </#if>
+
+                     {#if $T.listed.status==0}
+                       <#if userName?exists>
+                          <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       <#else>
+                          <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+                     {#else}
+                      <#if userName?exists>
+                             <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+                     {#/if}
+                </li>
+         {#else}
+        <#if lxName=='律所'>
+             {#if $T.listed.orgId==${djWx.orgid?c}}
+                    <li class="clearfix">
+                        <#if userName?exists>
+                             <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                             <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+
+
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0"> ${shortName!}.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1"> ${shortName!}.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2"> ${shortName!}.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3"> ${shortName!}.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4"> ${shortName!}.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5"> ${shortName!}.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp03"> ${shortName!}</code>
+                         {#/if}
+                       <#if userName?exists>
+                           <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                       </#if>
+
+                     {#if $T.listed.status==0}
+                       <#if userName?exists>
+                           <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       <#else>
+                           <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                       </#if>
+                     {#else}
+                       <#if userName?exists>
+                            <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       <#else>
+                            <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                       </#if>
+
+                     {#/if}
+                    </li>
+             {#else}
+                      <li class="clearfix">
+                       <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                       </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">协会.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">协会.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">协会.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">协会.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">协会.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">协会.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+                          <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          </#if>
+                     {#if $T.listed.status==0}
+                          <#if userName?exists>
+                               <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          </#if>
+                     {#else}
+                          <#if userName?exists>
+                                <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          <#else>
+                                <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          </#if>
+                     {#/if}
+                    </li>
+             {#/if}
+         <#elseif lxName=='律协'>
+                <li class="clearfix">
+                          <#if userName?exists>
+                             <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                          <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" nid="{$T.listed.id}" class="event_title fl" target="_blank" title="{$T.listed.name}">{$T.listed.shortName}</a>
+                          </#if>
+                         {#if $T.listed.type==2}
+                         <code class="fl f2ficon0">协会.班级</code>
+                         {#elseif $T.listed.type==3}
+                         <code class="fl f2ficon1">协会.微课</code>
+                         {#elseif $T.listed.type==1}
+                         <code class="fl f2ficon2">协会.沙龙</code>
+                          {#elseif $T.listed.type==0}
+                         <code class="fl f2ficon3">协会.论坛</code>
+                          {#elseif $T.listed.type==-3}
+                         <code class="fl f2ficon4">协会.训练营</code>
+                          {#elseif $T.listed.type==9}
+                         <code class="fl f2ficon5">协会.翻转课堂</code>
+                         {#else}
+                           <code class="fl noticesp02">协会</code>
+                         {#/if}
+
+                          <#if userName?exists>
+                                 <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          <#else>
+                                 <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="message fr"></a>
+                          </#if>
+
+                     {#if $T.listed.status==0}
+
+                          <#if userName?exists>
+                               <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          <#else>
+                               <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocking fr">报名中</a>
+                          </#if>
+                     {#else}
+                          <#if userName?exists>
+                              <a href="http://${serverName!www.zfwx.com}/allUser/school_login_success.jsp?redirect=http://${serverName!www.zfwx.com}/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          <#else>
+                              <a href="/DjActivity/getActivityInfo.do?activityId={$T.listed.id}" target="_blank" class="clock clocked fr">已结束</a>
+                          </#if>
+                     {#/if}
+                </li>
+         </#if>
+          {#/if}
+          {#/for}
+           {#/if}
+            {#/for}
+</textarea>
+
+
+
+<!--网校列表-->
+ <textarea id="wxlisttemplate" style="display:none">
+     {#if $T.list.length> $T.condition}
+              {#foreach $T.list as lists}
+                 {#if $T.lists$index< $T.condition}
+                        {#if $T.lists$index==${pxNum}}
+                           <a class="_hover_r _hover_rhover" target="_blank" href="http://${serverName!www.zfwx.com}/wxqt/wangxiao.do?id={$T.lists.orgId}">{$T.lists.shortname}</a>
+                        {#elseif $T.lists.orgId!=-1}
+                           <a class="_hover_r" target="_blank" href="http://${serverName!www.zfwx.com}/wangxiao/{$T.lists.orgId}.html">{$T.lists.shortname}</a>
+                        {#else}
+                           <a class="_hover_r wxswkt"  href="javascript:void(0);" >{$T.lists.shortname}</a>
+                        {#/if}
+                 {#/if}
+              {#/for}
+             <ul class="wxlist_forshort">
+                 {#foreach $T.list as lists}
+                     {#if $T.lists$index>= $T.condition}
+                               {#if $T.lists.orgId!=-1}
+                                      <li class="wxitem fl"><a class="_hover_r" target="_blank" href="http://${serverName!www.zfwx.com}/wangxiao/{$T.lists.orgId}.html">{$T.lists.shortname}</a></li>
+                               {#else}
+                                      <li class="wxitem fl"><a class="_hover_r wxswkt"  href="javascript:void(0);" >{$T.lists.shortname}</a></li>
+                               {#/if}
+                     {#/if}
+                  {#/for}
+              </ul>
+         <a class="_hover_r forshort"  href="javascript:void(0);" >...</a>
+
+     {#else}
+             {#foreach $T.list as lists}
+                {#if $T.lists$index==${pxNum}}
+                    <a class="_hover_r _hover_rhover" target="_blank" href="http://${serverName!www.zfwx.com}/wxqt/wangxiao.do?id={$T.lists.orgId}">{$T.lists.shortname}</a>
+                {#elseif $T.lists.orgId!=-1}
+                    <a class="_hover_r" target="_blank" href="http://${serverName!www.zfwx.com}/wangxiao/{$T.lists.orgId}.html">{$T.lists.shortname}</a>
+                {#else}
+                    <a class="_hover_r wxswkt"  href="javascript:void(0);" >{$T.lists.shortname}</a>
+                {#/if}
+             {#/for}
+     {#/if}
+</textarea>
+<!--网校列表-->
+
+<script type="text/javascript" src="${requestPath!}/djwfed/scripts/common/leftsides.js"></script>
+<script type="text/javascript" src="${requestPath!}/djwfed/scripts/jquery/jtemplates/jquery-jtemplates.js"></script>
+<script type="text/javascript" src="${requestPath!}/djwfed/scripts/common/courselist.js"></script>
+<div id="view">
+
+</div>
+<script type="text/javascript" src="${requestPath!}/djyFe/djyJsAPI/widgets/suspension.js"></script>
+<link href="${requestPath!}/djyFe/djyCss/djwx/common/layerbox.css" type="text/css" rel="stylesheet">
+<!--在线客服-->
+<div class="onlineService">
+    <div class="ico_os"></div>
+	<div class="olqqtel">
+		<p id="ico_onlineqq2" onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=635587880&site=qq&menu=yes');"  border="0"   class="qq">在线客服</p>
+		<p id="ico_onlineqq2" onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2420809847&site=qq&menu=yes');"  border="0"   class="qq">在线客服</p>
+		<p id="ico_onlineqq2" onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2850281251&site=qq&menu=yes');"  border="0"   class="qq">在线销售</p>
+		<p id="ico_onlineqq2" onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=2850281278&site=qq&menu=yes');"  border="0"   class="qq">在线销售</p>
+		<p><span>客服:010-52129055</span><span style='padding-left:26px;'>010-62210155</span><span>销售:010-62276686</span></p>
+	 </div>
+    <!--<div class="ico_pp"><a class="remindbtn" href="javascript:void(0);" title="" ></a></div>
+         <div class="ico_pp"><a id="jy-pop-tck" href="javascript:void(0);" title="" ></a></div> -->
+    <div class="ico_gt"><a href="javascript:void(0);" title=""></a></div>
+    <div class="ico_dcode">
+        <div class="dimensionalCode"></div>
+    </div>
+</div>
+<script type="text/javascript">
+	  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5a2dadce89ce7fc4d2a3d647241c4e9' type='text/javascript'%3E%3C/script%3E"));
+		$(function(){
+			$('a[href*="tongji.baidu.com"]').css('display','none');
+		});
+
+</script>
+<script type="text/javascript">
+   function toPlayVedio(p_id){
+      if(p_id){
+          window.open("http://${serverName!www.zfwx.com}/member/DjStucw/play.do?stucourseId="+p_id);
+      }else{
+        
+      }
+  }
+</script>
+</body>
+</html>
